@@ -8,7 +8,7 @@ public class DatabaseConnection {
     private static Connection conn = null;
 
     static{
-        String url = "jdbc:postgresql://localhost:5432/fridgeapp?user=postgres&password=root";
+        String url = System.getenv("JDBC_DATABASE_URL");
         try {
             conn = DriverManager.getConnection(url);
         } catch (SQLException e) {
